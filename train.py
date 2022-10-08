@@ -10,7 +10,6 @@ import json
 from config import *
 
 
-
 @dataclass
 class Category:
     name:str
@@ -37,7 +36,6 @@ class Category:
         print(f"类别 {self.name} 的统计模型已保存。")
 
 
-
 def statistic(path:Path, name:str = '', result:Category=None, max_count = 0):
     '''对目标训练文本目录进行递归统计，并保存结果'''
     if not result:
@@ -53,11 +51,6 @@ def statistic(path:Path, name:str = '', result:Category=None, max_count = 0):
     save_path = model_path / f"{name}.category"
     result.save_model(save_path)
     
-
-
-
-    
-            
 
 if __name__ == '__main__':
     for category in categories_info:
